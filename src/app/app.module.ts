@@ -9,8 +9,13 @@ import { JsonDetailsComponent } from './json-details/json-details.component';
 import { FormsModule } from '@angular/forms';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildOneComponent } from './child-one/child-one.component';
+import { ChildTwoComponent } from './child-two/child-two.component';
+import { ChildThreeComponent } from './child-three/child-three.component';
 
-
+import {CalendarModule} from 'primeng/calendar';
+import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +23,17 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     JsonDetailsComponent,
     HeroesComponent,
     HeroDetailComponent,
+    ParentComponent,
+    ChildOneComponent,
+    ChildTwoComponent,
+    ChildThreeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+.parent-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-container {
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
