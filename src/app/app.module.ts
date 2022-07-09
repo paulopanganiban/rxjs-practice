@@ -14,8 +14,8 @@ import { ChildOneComponent } from './child-one/child-one.component';
 import { ChildTwoComponent } from './child-two/child-two.component';
 import { ChildThreeComponent } from './child-three/child-three.component';
 
-import {CalendarModule} from 'primeng/calendar';
-import {ButtonModule} from 'primeng/button';
+// import {CalendarModule} from 'primeng/calendar';
+// import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,7 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ButtonModule
+    // ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
