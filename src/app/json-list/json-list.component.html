@@ -1,0 +1,14 @@
+<div>
+  <input type="text" [(ngModel)]="text1" (keyup)="selectCustomer()" />
+  <input type="text" [(ngModel)]="text2" (keyup)="selectCustomer()" />
+  <ul *ngFor="let item of data | async">
+    <li>
+      <h1>{{ item.userId }}</h1>
+      <h2>{{ item.title }}</h2>
+      <h3>{{ item.body }}</h3>
+      <input/>
+      <button>Save</button>
+      <button routerLink="/json-details/{{ item.id }}">View</button>
+    </li>
+  </ul>
+</div>
