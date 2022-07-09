@@ -23,7 +23,7 @@ export class EventBusService<T> {
 }
 }
 export class EmitEvent<T> {
-  constructor(public name: string, public value?: T) { }
+  constructor(public name: Events, public value?: T) { }
 }
 export interface Testing {
   text1?: string
@@ -31,5 +31,6 @@ export interface Testing {
 }
 
 export enum Events {
-  testing = 'testing'
+  testing,
+  testing2
 }

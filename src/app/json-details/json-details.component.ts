@@ -17,9 +17,9 @@ export class JsonDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs.add(this.eventBus.on(Events.testing, 
-      (cust: Testing) =>{ 
-        this.text1 = cust.text1
-        this.text2 = cust.text2}))
+      (value: Testing) =>{ 
+        this.text1 = value.text1
+        this.text2 = value.text2}))
   }
 
 }
