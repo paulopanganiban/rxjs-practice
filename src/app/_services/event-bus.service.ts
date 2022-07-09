@@ -13,13 +13,13 @@ export class EventBusService<T> {
   emit(event: EmitEvent<T>) {
     this.subject$.next(event)
   }
-  on(event: Events, action: any): Subscription {
+  on(event: Events, dataToEmit: any): Subscription {
     return this.subject$
          .pipe(
                filter((e: EmitEvent<T>) => e.name === event),
                map((e: EmitEvent<T>) => e.value)
              )
-         .subscribe(action);
+         .subscribe(dataToEmit);
 }
 }
 export class EmitEvent<T> {

@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { JsonListComponent } from './json-list/json-list.component';
 import { JsonDetailsComponent } from './json-details/json-details.component';
 import { FormsModule } from '@angular/forms';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     JsonListComponent,
     JsonDetailsComponent,
+    HeroesComponent,
+    HeroDetailComponent,
   ],
   imports: [
     BrowserModule,
