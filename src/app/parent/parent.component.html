@@ -1,20 +1,37 @@
-<div class="parent-container">
-  <div class="parent-header header-flex-container">
-    <h1>Create new deposit</h1>
-    <div class="button-group">
-      <button>cancel</button>
-      <button>submit for approval</button>
-    </div>
+<div class="parent-container flow-bottom">
+  <div>
+    <p-card>
+      <div class="parent-header header-flex-container">
+        <h1>Create new deposit</h1>
+        <div class="button-group">
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Cancel"
+            class="p-button-outlined p-button-danger"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Submit for approval"
+            class="p-button-outlined p-button-success"
+          ></button>
+        </div>
+      </div>
+    </p-card>
   </div>
-  <div class="cta-container">
-    <form
-      *ngIf="addNewDepositForm"
-      [formGroup]="addNewDepositForm"
-      id="my-form"
-      (ngSubmit)="onSubmitDepositForm()"
-    >
-      <div class="deposit-cta-wrapper-top">
-        <div class="deposit-cta-top flow-right">
+
+  <div>
+    <p-card>
+      <div class="cta-container">
+        <form
+          *ngIf="addNewDepositForm"
+          [formGroup]="addNewDepositForm"
+          id="my-form"
+          (ngSubmit)="onSubmitDepositForm()"
+        >
           <div class="calendar-wrapper">
             <h3 class="title-header">Date Deposited to Bank Account</h3>
             <p-calendar
@@ -68,35 +85,47 @@
               formControlName="dfBankReferenceNumber"
             />
           </div>
+        </form>
+      </div>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card>
+      <div class="table-container">
+        <div class="table-cta-container header-flex-container">
+          <h1>deposits (0)</h1>
+          <button>add new deposit</button>
+        </div>
+        <table>
+          place table here
+        </table>
+      </div>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card>
+      <div class="total-amount-container">
+        <h1>PHP 20,000</h1>
+        <p>Total Amount Deposited</p>
+      </div>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card>
+      <div class="status-history-container">
+        <h1>Status History</h1>
+        <div>
+          <h3>note</h3>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <p>upload file</p>
         </div>
       </div>
-    </form>
-  </div>
-
-  <div class="table-container">
-    <div class="table-cta-container header-flex-container">
-      <h1>deposits (0)</h1>
-      <button>add new deposit</button>
-    </div>
-    <table>
-      place table here
-    </table>
-  </div>
-  <div class="total-amount-container">
-    <h1>PHP 20,000</h1>
-    <p>Total Amount Deposited</p>
-  </div>
-
-  <div class="status-history-container">
-    <h1>Status History</h1>
-    <div>
-      <h3>note</h3>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-      <p>upload file</p>
-    </div>
+    </p-card>
   </div>
 </div>
-
 <app-child-one></app-child-one>
 <app-child-two></app-child-two>
 <app-child-three></app-child-three>
