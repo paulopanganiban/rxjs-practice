@@ -1,5 +1,5 @@
 <div class="parent-container">
-  <div class="parent-header header-flex-container ">
+  <div class="parent-header header-flex-container">
     <h1>Create new deposit</h1>
     <div class="button-group">
       <button>cancel</button>
@@ -7,27 +7,74 @@
     </div>
   </div>
   <div class="cta-container">
-    <form action="">
-      <div>
-        <h3>date deposited</h3>
-      </div>
-      <div>
-        <h3>currency</h3>
-        <p>dropdown list</p>
-      </div>
-      <div>
-        <h3>df bank acc code</h3>
-        <p>dropdown list</p>
-      </div>
-      <div>
-        <h3>df bank reference no</h3>
-        <p>input</p>
+    <form
+      *ngIf="addNewDepositForm"
+      [formGroup]="addNewDepositForm"
+      id="my-form"
+      (ngSubmit)="onSubmitDepositForm()"
+    >
+      <div class="deposit-cta-wrapper-top">
+        <div class="deposit-cta-top flow-right">
+          <div class="calendar-wrapper">
+            <h3 class="title-header">Date Deposited to Bank Account</h3>
+            <p-calendar
+              formControlName="date"
+              [showIcon]="true"
+              inputId="icon"
+            ></p-calendar>
+          </div>
+          <div class="currency-wrapper">
+            <h3 class="title-header">Currency</h3>
+            <p-dropdown
+              [options]="currencies"
+              formControlName="currency"
+              optionLabel="name"
+              [filter]="true"
+              filterBy="name"
+              [showClear]="true"
+              placeholder="Select currency"
+            >
+            </p-dropdown>
+          </div>
+          <div class="deposit-type-wrapper">
+            <h3 class="title-header">Deposit Type</h3>
+            <p-dropdown
+              autoWidth="false"
+              [options]="banks"
+              formControlName="depositType"
+              optionLabel="name"
+              [filter]="true"
+              filterBy="name"
+              [showClear]="true"
+              placeholder="Select a bank"
+            >
+            </p-dropdown>
+          </div>
+          <div class="bank-acc-code-wrapper">
+            <h3 class="title-header">DragonFi Bank Account Code</h3>
+            <input
+              id="disabled-input"
+              type="text"
+              pInputText
+              [disabled]="true"
+              [value]="addNewDepositForm?.value?.depositType?.code"
+            />
+          </div>
+          <div class="bank-reference-wrapper">
+            <h3 class="title-header">DragonFi Bank Reference No.</h3>
+            <input
+              type="text"
+              pInputText
+              formControlName="dfBankReferenceNumber"
+            />
+          </div>
+        </div>
       </div>
     </form>
   </div>
 
   <div class="table-container">
-    <div class="table-cta-container header-flex-container ">
+    <div class="table-cta-container header-flex-container">
       <h1>deposits (0)</h1>
       <button>add new deposit</button>
     </div>

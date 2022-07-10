@@ -1,4 +1,101 @@
-
+export const accountCodes = [
+    {
+        accCode: "62b54ef9601",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-1',
+        secondary: 'Anne Curtis-1',
+    },
+    {
+        accCode: "62b54ef9cf0",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-2',
+        secondary: 'Anne Curtis-2',
+    },
+    {
+        accCode: "62b54ef96e",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-3',
+        secondary: 'Anne Curtis-3',
+    },
+    {
+        accCode: "62b54ef99",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-4',
+        secondary: 'Anne Curtis-4',
+    },
+    {
+        accCode: "62b54ef93b",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-5',
+        secondary: 'Anne Curtis-5',
+    },
+    {
+        accCode: "62b54ef965",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-6',
+        secondary: 'Anne Curtis-6',
+    },
+    {
+        accCode: "62b54ef9",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-7',
+        secondary: 'Anne Curtis-7',
+    },
+    {
+        accCode: "62b54ef920",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-8',
+        secondary: 'Anne Curtis-8',
+    },
+    {
+        accCode: "62b54ef96",
+        accountInvestmentType: "Crypto",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-9',
+        secondary: 'Anne Curtis-9',
+    },
+    {
+        accCode: "62b54ef933",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Joint OR',
+        primary: 'John Lloyd-10',
+        secondary: 'Anne Curtis-10',
+    },
+    {
+        accCode: "62b54ef962",
+        accountInvestmentType: "PH Stocks",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-11',
+        secondary: 'Anne Curtis-11',
+    },
+    {
+        accCode: "62b54ef9c1",
+        accountInvestmentType: "Crypto",
+        clientCode: '121',
+        clientAccountType: 'Individual',
+        primary: 'John Lloyd-12',
+        secondary: 'Anne Curtis-12',
+    }
+];
 
 export const data = [
     {
