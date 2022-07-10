@@ -35,6 +35,7 @@
           <div class="calendar-wrapper">
             <h3 class="title-header">Date Deposited to Bank Account</h3>
             <p-calendar
+              [style]="{ width: '100%' }"
               formControlName="date"
               [showIcon]="true"
               inputId="icon"
@@ -70,6 +71,7 @@
           <div class="bank-acc-code-wrapper">
             <h3 class="title-header">DragonFi Bank Account Code</h3>
             <input
+              [style]="{ width: '100%' }"
               id="disabled-input"
               type="text"
               pInputText
@@ -80,6 +82,7 @@
           <div class="bank-reference-wrapper">
             <h3 class="title-header">DragonFi Bank Reference No.</h3>
             <input
+              [style]="{ width: '100%' }"
               type="text"
               pInputText
               formControlName="dfBankReferenceNumber"
