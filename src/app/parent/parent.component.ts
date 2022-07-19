@@ -36,6 +36,15 @@ export class ParentComponent implements OnInit {
     { name: 'BPI Family Savings Bank', code: '1313' },
     { name: 'China Bank', code: '6969' },
   ];
+  accountAccess?: {
+    department: string
+    position: number
+    name: string
+  } = {
+      department: 'Maker',
+      name: 'Approver',
+      position: 1,
+    }
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
