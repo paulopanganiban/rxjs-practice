@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { accountCodes } from '../_data/json-data';
+import { DataService } from '../_services/data.service';
 
 
 interface ICurrency {
@@ -45,10 +46,11 @@ export class ParentComponent implements OnInit {
       name: 'Approver',
       position: 1,
     }
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.initializeForm()
+    this.dataService.getPosts().subscribe(data => console.log(data))
   }
   initializeForm() {
     this.addNewDepositForm = this.formBuilder.group({

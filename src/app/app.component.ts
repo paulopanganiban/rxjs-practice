@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './_services/data.service';
+
+import { Firestore, collectionData, collection, DocumentData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 // import { PrimeNGConfig } from 'primeng/api';
+
+interface Item {
+  name: string
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,10 +15,14 @@ import { DataService } from './_services/data.service';
 })
 export class AppComponent implements OnInit {
   title = 'rxjs-practice';
+  item$?: Observable<DocumentData[]>;
+  collection = collection(this.firestore, 'items');
   constructor(
-    // private primengConfig: PrimeNGConfig
-    ) { }
+    private firestore: Firestore
+  ) {
+
+  }
   ngOnInit(): void {
-    // this.primengConfig.ripple = true;
+    this.item$ = collectionData(this.collection);
   }
 }
