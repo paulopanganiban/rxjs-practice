@@ -1,18 +1,45 @@
-
+<ng-container *ngIf="vm$ | async as vm">
+  <p-card>
+    <div>
+      <p-table
+        [columns]="[
+        { field: 'description', header: 'Description' },
+        { field: 'categoryName', header: 'Category' },
+        { field: 'id', header: 'Id' },
+        { field: 'title', header: 'Title' },
+        ]"
+        [value]="vm.postsWithCategory"
+        responsiveLayout="scroll"
+      >
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{ col.header }}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              {{ rowData[col.field] }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </p-card>
+</ng-container>
 
 <div class="parent-container flow-bottom">
   <div>
     <p-card>
-      <div>
-        
-      </div>
+      <div></div>
     </p-card>
   </div>
   <div>
     <p-card>
       <div class="parent-header header-flex-container">
-        <h1>{{ accountAccess?.position}}</h1>
-      
+        <h1>{{ accountAccess?.position }}</h1>
       </div>
     </p-card>
   </div>

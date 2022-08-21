@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { combineLatest, Observable } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
 import { accountCodes } from '../_data/json-data';
 import { DataService } from '../_services/data.service';
 
@@ -46,11 +48,29 @@ export class ParentComponent implements OnInit {
       name: 'Approver',
       position: 1,
     }
+  posts$?: Observable<any>
+  categories$?: Observable<any>
+    postsWithCategory$?: Observable<any>
+  vm$?: Observable<any>
   constructor(private formBuilder: FormBuilder, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.initializeForm()
-    this.dataService.getPosts().subscribe(data => console.log(data))
+    this.posts$ = this.dataService.getPosts().pipe(
+      tap((data) => console.log(data))
+    )
+    this.categories$ = this.dataService.getCategories().pipe(
+      tap((data) => console.log(data))
+    )
+    this.postsWithCategory$ = this.dataService.getPostsWithCategory().pipe(
+      tap((data => console.log(data)))
+    )
+    this.vm$ = combineLatest([this.posts$, this.categories$, this.postsWithCategory$]).pipe(
+      map(([posts, categories, postsWithCategory]) => {
+        return { posts, categories, postsWithCategory}
+      }),
+      tap((data) => console.log(data))
+    )
   }
   initializeForm() {
     this.addNewDepositForm = this.formBuilder.group({

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { map, mergeMap, tap } from 'rxjs/operators';
 interface IPost {
   id: string
   title: string
@@ -14,10 +15,53 @@ interface IPost {
 export class DataService {
 
   constructor(private http: HttpClient) { };
+  // What do you have
+  // What do you want
+  // When do you want it
+  // Posts and Categories
+  // We need to get the categoryId of the post
+  // On user click
 
-  getPosts<T>() {
+  getPostsWithCategory() {
+    return this.getPosts().pipe(
+      // get posts using mergeMap
+      // then get categoryId
+      mergeMap((posts) => this.getCategories()
+        .pipe(
+          // get categories here using map
+          map((categories) => {
+            return posts.map(post => {
+                const categoryName = categories.find(category => category.id === post.categoryId)?.title
+                const data = {
+                  ...post,
+                  categoryName
+                }
+                return data
+            })
+
+          })
+        )
+      )
+    )
+  }
+
+
+  getCategories() {
+    return this.http.get<{[id: string]: {id: string}}>(
+      `https://rxjs-posts-default-rtdb.firebaseio.com/categories.json`
+    ).pipe(
+      map((categories) => {
+        const categoriesData: {id: string, title?: string}[] = [];
+        for (const id in categories) {
+          categoriesData.push({ ...categories[id], id });
+        }
+        return categoriesData;
+      })
+    );
+  }
+  getPosts() {
     return this.http
-      .get<T>(
+      .get<{[categoryId: string]: {categoryId: string}}>(
         `https://rxjs-posts-default-rtdb.firebaseio.com/posts.json`
       )
       .pipe(
@@ -26,7 +70,7 @@ export class DataService {
         map(posts => {
           const postArray = []
           for (const id in posts) {
-            postArray.push({ ...posts[id], id  })
+            postArray.push({ ...posts[id], id })
           }
           return postArray;
         })

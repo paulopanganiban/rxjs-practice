@@ -18,7 +18,7 @@ import { ChildTwoComponent } from './child-two/child-two.component';
 import { ChildThreeComponent } from './child-three/child-three.component';
 
 
-
+import {TableModule} from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -59,7 +59,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     InputTextModule,
     ButtonModule,
     CardModule,
-
+    TableModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
